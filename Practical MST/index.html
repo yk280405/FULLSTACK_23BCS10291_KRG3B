@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Counter Example</title>
+  <style>
+    body { text-align: center; margin-top: 50px; font-family: Arial; }
+    button { margin: 5px; padding: 10px 20px; font-size: 16px; }
+    #message { color: red; font-weight: bold; }
+  </style>
+</head>
+<body>
+
+  <h1>Counter: <span id="counter">0</span></h1>
+  <button id="increment">Increment</button>
+  <button id="decrement">Decrement</button>
+  <button id="reset">Reset</button>
+  <p id="message"></p>
+
+  <script>
+    let count = 0;
+
+    const counterEl = document.getElementById("counter");
+    const messageEl = document.getElementById("message");
+
+    const updateCounter = () => {
+      counterEl.textContent = count;
+    };
+
+    const increment = () => {
+      if (count < 10) {
+        count++;
+        messageEl.textContent = "";
+        updateCounter();
+        if (count === 10) {
+          messageEl.textContent = "Maximum limit reached!";
+        }
+      }
+    };
+
+    const decrement = () => {
+      if (count > 0) {
+        count--;
+        messageEl.textContent = "";
+        updateCounter();
+      }
+    };
+
+    const reset = () => {
+      count = 0;
+      messageEl.textContent = "";
+      updateCounter();
+    };
+
+    document.getElementById("increment").addEventListener("click", increment);
+    document.getElementById("decrement").addEventListener("click", decrement);
+    document.getElementById("reset").addEventListener("click", reset);
+  </script>
+
+</body>
+</html>
