@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Library Management System</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<h1>📚 Library Management System</h1>
+<div class="container">
+<div class="input-group">
+<input id="search" type="text" placeholder="Search by title or author..." oninput="searchBooks()" />
+</div>
+
+
+<div class="input-group">
+<input id="title" type="text" placeholder="Book Title" />
+<input id="author" type="text" placeholder="Author" />
+<button onclick="addBook()">Add</button>
+</div>
+
+
+<div id="book-list"></div>
+</div>
+
+
+<script src="script.js"></script>
+</body>
+</html>
